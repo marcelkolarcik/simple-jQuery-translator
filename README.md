@@ -30,7 +30,7 @@
    and follow the instruction in <a href = "https://marcelkolarcik.github.io/simple-jQuery-translator/helper.html">helper.html</a >
    to help you create translation JSON files faster.   
    
-   > After creating translation JSON files using assets/js/translator_helper/helper.js and <code>index.html, helper.html, usage.html, variables.html</code>, delete them from your 
+   > After creating translation JSON files using assets/js/translator_helper files and <code>index.html, helper.html, usage.html, variables.html</code> files, delete them from your 
    project directories, because they won't be needed anymore.
    
   #### Create translation JSON files and place them in  assets/js/languages 
@@ -80,14 +80,22 @@
    > Open settings.js in assets/js/translator/settings.js and update variables to match your site.
    
    ```javascript
+   /*SITE'S DEFAULT LANGUAGE*/
    var default_language = 'en'; // Demo example : "en"
+   
+   /*PATH TO LANGUAGE FILES, UPDATE TO YOUR PROJECT'S FOLDER STRUCTURE*/
    var path_to_language_files = 'assets/js/languages'; // Demo example : "assets/js/languages"
+   
+   /*WHAT LANGUAGE FILES YOU ARE USING , FOR EXAMPLE: <br >
+    DEMO SITE IS USING en.json, sk.json, es.json, pl.json => site_languages = ["en","pl","sk","pl"].*/
    var site_languages = ["en","pl","sk","pl"]; // Demo example : ["en","pl","sk","pl"]
    
-   /*FOR DEVELOPMENT : IF YOU WANT TO HIGHLIGHT TEXT THAT DOESN'T HAVE TRANSLATION YET,
-   * YOU CAN SET YOUR OWN CLASS TO HIGHLIGHT SUCH A TEXT.
-   * 
-   * RECOMMENDED : IN PRODUCTION SET highlight_class = '';*/
+   /*FOR DEVELOPMENT ONLY IF YOU WANT TO HIGHLIGHT TEXT THAT
+     IS NOT TRANSLATED TO ANY PARTICULAR LANGUAGE YET
+     SET highlight_class THAT WILL BE APPLIED TO ELEMENT THAT IS NOT TRANSLATED YET TO HIGHLIGHT IT
+     TO NOTIFY YOU!
+    SWITCH OFF IN PRODUCTION 
+    var highlight_class =  ''  ; */
    var highlight_class = 'bg-warning text-danger p-1'; // Demo example : 'bg-warning text-danger p-1'
    ```      
    #### Include jQuery and translator.js in your HTML files, that need translating at the bottom of the the body.
