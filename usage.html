@@ -80,7 +80,7 @@
 			  <a
 					  class = "nav-link"
 					  href = "https://github.com/marcelkolarcik/simple-jQuery-translator"
-					  target="_blank"
+					  target = "_blank"
 			  >Github</a >
 			</li >
 
@@ -117,49 +117,152 @@
                                 <h4 >To use it in your project : </h4 >
 
                             </li >
-                                <li class = "list-group-item list-group-item-info">
-                                    Download <code >assets</code > folder from <a href = "https://github.com/marcelkolarcik/simple-jQuery-translator">simple Jquery translator repository</a >
-                                    and place it in the root directory of your project.
+	                        <li class = "list-group-item p-1 bg-info"></li >
+                                <li class = "list-group-item ">
+	                                <span style = "font-size: 1.5em;">1.</span >
+                                    Download <code >assets/js/translator</code > folder from <a href = "https://github.com/marcelkolarcik/simple-jQuery-translator">simple Jquery translator repository</a >
+                                    and place it in the root directory of your project. <br ><br > Include <code >assets/js/translator/translator.js</code > in your HTML pages, that need translation.
 
                                 </li >
+	                        <li class="list-group-item bg-secondary text-light">
+		                        &lt;script
+				                        src = "assets/js/translator/translator.js"
+				                        type = "module"
+		                        &gt;&lt;/script &gt;
+	                        </li>
+	                         <li class = "list-group-item p-1 bg-info mt-1"></li >
                             <li class = "list-group-item">
                                 If developing locally, you will need to run HTTP server. One of them can be found at
                                 <a href = "https://github.com/lwsjs/local-web-server">local web server</a >.
                             </li >
                             <li class = "list-group-item">
                                  If you are using any of the online translators, feel free to download <code >index.html, helper.html, usage.html, variables.html</code >
+	                            and <code >assets/js/translator_helper</code > directory
                                 and follow the instructions in <a href = "https://marcelkolarcik.github.io/simple-jQuery-translator/helper.html">helper.html</a >
                                 to help you create translation JSON files faster.
 
                             </li >
-                              <li class = "list-group-item list-group-item-info">
-                              Update <code >settings.js</code ></li >
-                             <li class = "list-group-item">
+	                        <li class = "list-group-item list-group-item-danger mb-1">
+		                        Once you're done creating translation files using  <code >index.html, helper.html, usage.html, variables.html</code > and
+		                        <code >assets/js/translator_helper</code > files, you can remove those from your project, as they are not needed for production.
+	                        </li >
+	                        <li class = "list-group-item p-1 bg-info"></li >
+                              <li class = "list-group-item">
+	                               <span style = "font-size: 1.5em;">2.</span >
+                              Update <code >assets/js/translator/settings.js</code ></li >
+	                         <li class = "list-group-item p-1 bg-info"></li >
+                             <li class = "list-group-item  mb-1">
 
 
                               Open <code >settings.js</code > in <code >assets/js/translator/settings.js</code > and update variables :<br ><br >
-                             <span class = "text-danger">var</span >       <span class = "text-primary">default_language</span > <span class = "text-warning"> // Demo example : "en"</span > <br >
-                                    <span class = "text-danger">var</span >       <span class = "text-primary">path_to_language_files</span > <span class = "text-warning"> // Demo example : "assets/js/languages"</span ><br >
-                                    <span class = "text-danger">var</span >       <span class = "text-primary">site_languages</span > <span class = "text-warning"> // Demo example : ["en","pl","sk","pl"]</span ><br >
-	                             <span class = "text-danger">var</span >       <span class = "text-primary">highlight_class</span > <span class = "text-warning"> // Demo example : "bg-warning text-danger p-1"</span ><br ><br >
+	                             <span class = "text-warning">SITE'S DEFAULT LANGUAGE</span ><br >
+                                 <span class = "text-danger">var</span > <span class = "text-primary">default_language</span > <span class = "text-warning"> // Demo example : "en"</span > <br ><br >
+                                 <span class = "text-warning">PATH TO LANGUAGE FILES, UPDATE TO YOUR PROJECT'S FOLDER STRUCTURE</span ><br >
+	                             <span class = "text-danger">var</span > <span class = "text-primary">path_to_language_files</span > <span class = "text-warning"> // Demo example : "assets/js/languages"</span ><br ><br >
+                                 <span class = "text-warning">WHAT LANGUAGE FILES YOU ARE USING , FOR EXAMPLE: <br >
+                                   DEMO SITE IS USING en.json, sk.json, es.json, pl.json => site_languages = ["en","pl","sk","pl"]. <br >
+
+                                 </span ><span class="text-danger">CASE'S OF LANGUAGES MUST MATCH LANGUAGE FILES!!!</span><br >
+	                             <span class = "text-danger">var</span > <span class = "text-primary">site_languages</span > <span class = "text-warning"> // Demo example : ["en","pl","sk","pl"]</span ><br ><br >
+	                            <span class="text-warning">
+		                                FOR DEVELOPMENT ONLY IF YOU WANT TO HIGHLIGHT TEXT THAT
+										 IS NOT TRANSLATED TO ANY PARTICULAR LANGUAGE YET
+										  SET highlight_class THAT WILL BE APPLIED TO ELEMENT THAT IS NOT TRANSLATED YET TO HIGHLIGHT IT
+		                            TO NOTIFY YOU! <br >
+		                                    SWITCH OFF IN PRODUCTION <br >
+										 var highlight_class =  ''  ; <br >
+
+
+
+
+	                            </span><br >
+	                              <p class = "___" data-text = "Not translated string"></p >
+	                             <span class = "text-danger">var</span > <span class = "text-primary">highlight_class</span > <span class = "text-warning"> // Demo example : "bg-warning text-danger p-1"</span ><br ><br >
 
                               to match your site.
                             </li >
+
+	                        <li class = "list-group-item p-1 bg-info"></li >
                             <li class = "list-group-item">
-                                Create translation JSON files and place them in <code >assets/js/languages</code > directory.
-                                <br >
-                                You can help yourself with <a href = "https://marcelkolarcik.github.io/simple-jQuery-translator/helper.html">helper.html</a >
-                                and <code >assets/js/translator_helper/helper.js</code >
+	                            <span style = "font-size: 1.5em;">3.</span >
+                                Create translation JSON file(s) and place them in <code >assets/js/languages</code > directory.
+
 
 
                             </li >
-                            <li class = "list-group-item list-group-item-info">
+	                        <li class = "list-group-item p-1 bg-info mb-1"></li >
+	                        <li class = "list-group-item bg-secondary text-warning">
+		                        { <br >
+  "hello"                                                                                   : "Hola" ,<br >
+  "Examples"                                                                                : "HTML Ejemplos" ,<br >
+  "this is link"                                                                            : "este es el enlace" ,<br >
+  "label"                                                                                   : "etiqueta" ,<br >
+  "Your idea"                                                                               : "Tu idea" ,<br >
+  "Create something amazing..."                                                             : "Crea algo increíble ..." ,<br >
+  "image alt description"                                                                   : "descripción alternativa de la imagen" ,<br >
+  "helper"                                                                                  : "Ayudante" ,<br >
+  "link"                                                                                    : "enlace" ,<br >
+  "logo image"                                                                              : "Logotipo" ,<br >
+  "translate"                                                                               : "traducir" ,<br >
+  "switch to english"                                                                       : "Cambiar a inglés" ,<br >
+  "switch to slovak"                                                                        : "cambiar a eslovaco" ,<br >
+  "switch to spanish"                                                                       : "cambiar a español" ,<br >
+  "switch to polish"                                                                        : "cambiar a polaco" ,<br >
+  "english flag image"                                                                      : "imagen de la bandera inglesa" ,<br >
+  "slovak flag image"                                                                       : "imagen de la bandera eslovaca" ,<br >
+  "spanish flag image"                                                                      : "imagen de la bandera española" ,<br >
+  "polish flag image"                                                                       : "imagen de la bandera polaca" ,<br >
+  "Home"                                                                                    : "Hogar" ,<br >
+  "Link"                                                                                    : "Enlace" ,<br >
+  "Disabled"                                                                                : "Discapacitado" ,<br >
+  "Search"                                                                                  : "Buscar" ,<br >
+  "Title of element : data-title attribute"                                                 : "Título del elemento: atributo de data-title" ,<br >
+  "Placeholder for input fields : data-placeholder attribute"                               : "Marcador de posición para campos de entrada: atributo de data-placeholder" ,<br >
+  "alt attribute for images : data-alt attribute"                                           : "atributo alt para imágenes: atributo data-alt" ,<br >
+  "No translation for text"                                                                 : "Sin traducción de texto" ,<br >
+  "Examples of usage"                                                                       : "Ejemplos de uso" ,<br >
+  "Single data-text attribute"                                                              : "Atributo de data-text único" ,<br >
+  "Multiple data-text attribute"                                                            : "Atributo de data-text datos múltiples" ,<br >
+  "If there is no translation for the text, we will display text from data-text attribute." : "Si no hay traducción para el texto, mostraremos el texto del atributo de data-text" ,<br >
+  "Every element that need translating must have class"                                     : "Cada elemento que necesita traducción debe tener la clase" ,<br >
+  "and any combination of"                                                                  : "y cualquier combinación de" ,<br >
+  "with values written in default language"                                                 : "con valores escritos en idioma predeterminado" ,<br >
+  "___ ( three underscores )"                                                               : "___ ( tres guiones bajos )" ,<br >
+  "Usage"                                                                                   : "Uso" ,<br >
+  "This user's name is |user and he is from |city"                                          : "El nombre de este usuario es |user y él es de |city" ,<br >
+  "This is"                                                                                 : "Esto es" ,<br >
+  "bold text."                                                                              : "texto en negrita." ,<br >
+  "And this is green text on grey background"                                               : "Y esto es texto verde sobre fondo gris" ,<br >
+  "single"                                                                                  : "individual" ,<br >
+  "My name is |first_variable and I live in city |second_variable and i am :status"         : "Mi nombre es |first_variable y vivo en la ciudad |second_variable y estoy :status" ,<br >
+  "My name is |first_variable and I am :single"                                             : "Mi nombre es |first_variable y estoy :single" ,<br >
+  "This is :double bedroom"                                                                 : "Esto es habitación :double" ,<br >
+  "double"                                                                                  : "doble" ,<br >
+  "This is :room_type bedroom"                                                              : "Esto es habitación :room_type" ,<br >
+  "This user's name is |user and he is from |city and he is :gender"                        : "El nombre de este usuario es |user y él es de |city y él es :gender",<br >
+  "male"                                                                                    : "varón" ,<br >
+  "female"                                                                                  : "hembra",<br >
+  "Variables"                                                                               : "Variables"<br >
+
+
+}
+
+	                        </li >
+	                        <li class = "list-group-item  mb-1">
+		                         <br >
+                                You can help yourself with <a href = "https://marcelkolarcik.github.io/simple-jQuery-translator/helper.html">helper.html</a >
+                                and <code >assets/js/translator_helper/helper.js</code >
+
+	                        </li >
+	                        <li class = "list-group-item p-1 bg-info"></li >
+                            <li class = "list-group-item">
+	                            <span style = "font-size: 1.5em;">4.</span >
                                 Create your HTML elements that need translating using
                                 <a href = "https://marcelkolarcik.github.io/simple-jQuery-translator/index.html">HTML Examples</a >
 	                            and
 	                             <a href = "https://marcelkolarcik.github.io/simple-jQuery-translator/variables.html">Variables</a >
                             </li >
-
+                            <li class = "list-group-item p-1 bg-info mb-1"></li >
                             <li class = "list-group-item">
                                 <h4 >First load of the page</h4 >
 
