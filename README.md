@@ -19,17 +19,18 @@
  
  # Instalation 
  
-  #### Download <code>assets</code> folder from <a href = "https://github.com/marcelkolarcik/simple-jQuery-translator">simple Jquery translator repository</a >
+  #### Download <code>assets/js/translator</code> folder from <a href = "https://github.com/marcelkolarcik/simple-jQuery-translator">simple Jquery translator repository</a >
   and place it in the root directory of your project.
                                      
  >  If developing locally, you will need to run HTTP server. One of them can be found at
                                     <a href = "https://github.com/lwsjs/local-web-server">local web server</a >.      
                                     
- >  If you are using any of the online translators, feel free to download <code>index.html, helper.html, usage.html</code>
-   and follow the instractions in <a href = "https://marcelkolarcik.github.io/simple-jQuery-translator/helper.html">helper.html</a >
+ >  If you are using any of the online translators, feel free to download <code>index.html, helper.html, usage.html, variables.html</code>
+   and <code>assets/js/translator_helper</code> folder with it's files
+   and follow the instruction in <a href = "https://marcelkolarcik.github.io/simple-jQuery-translator/helper.html">helper.html</a >
    to help you create translation JSON files faster.   
    
-   > After creating translation JSON files using helper.js and <code>index.html, helper.html, usage.html</code>, delete them from your 
+   > After creating translation JSON files using assets/js/translator_helper/helper.js and <code>index.html, helper.html, usage.html, variables.html</code>, delete them from your 
    project directories, because they won't be needed anymore.
    
   #### Create translation JSON files and place them in  assets/js/languages 
@@ -143,7 +144,7 @@
    ```html
     <!--change_language.js AT THE BOTTOM OF THE BODY-->
    <script
-   			src = "assets/js/change_language.js"
+   			src = "assets/js/translator_helper/change_language.js"
    			type = "module"
    	></script>
    	
@@ -313,7 +314,7 @@
  > In the demo example, we are using bootstrap's dropdown, and 'click' event to trigger translate(); function.
  
  > You can of course apply different logic for triggering translate(); function.
-     assets/js/change_language.js
+     assets/js/translator_helper/change_language.js
      
  # Browser support
  

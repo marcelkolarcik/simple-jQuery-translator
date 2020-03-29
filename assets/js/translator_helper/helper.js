@@ -1,4 +1,4 @@
-import { path_to_language_files } from "./settings.js";
+import { path_to_language_files } from "../translator/settings.js";
 
 
 ( function ()
